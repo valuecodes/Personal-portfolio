@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import Navbar from './components/navbar/navbar'
+import MainPage from './components/mainContent/mainPage'
+import {Background} from './components/mainContent/background/background'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+export class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+        currentPage:'Home'
+    }
 }
 
-export default App;
+  changePage(page){
+    this.setState({currentPage:page});
+  }
+
+  render() {
+    return (
+      <div className="app">
+        <Background/>
+        <Navbar changePage={this.changePage.bind(this)}/>
+        <MainPage currentPage={this.state.currentPage}/>
+      </div>
+    )
+  }
+}
+
+export default App

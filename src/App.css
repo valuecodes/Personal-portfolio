@@ -1,38 +1,930 @@
-.App {
+@import url('https://fonts.googleapis.com/css?family=Share Tech');
+@import url('https://fonts.googleapis.com/css?family=Blinker');
+@import url('https://fonts.googleapis.com/css?family=Scada');
+
+body{
+  font-family: Share Tech;
+  overflow: hidden;
+}
+
+#app{
+  width: 100%;
+  height: 100%;
+}
+
+.backgroundImage{
+  position: absolute;
+  width: 10000px;
+  height: auto;
+  z-index: -10;
+  top:-450px;
+  left: 300px;
+}
+
+/* Navbar */
+#navBar{
+  height: 50px;
+  margin-top: 30px;
+  width: 1fr;
+}
+
+.buttonContainer{
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border-radius: 5px;
+  /* background-color: #555; */
+  box-shadow:0 0 3px 2px rgba(6, 34, 87, 0.555);
+}
+
+.navButton{
+  background-color: rgba(205, 215, 224, 0.74);
+  border: none;
+  font-size: 20px;
+  font-family: Share Tech;
   text-align: center;
+  height: 50px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navButton:focus{
+  outline:0;
+  margin-top: 1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navButton:hover{
+  cursor: pointer;
+  background-color: rgba(40, 96, 148, 0.445);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.navButton:first-child{
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-right: rgba(205, 215, 224, 0.959) 2px solid;
+}
+
+.navButton:last-child{
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-left: rgba(205, 215, 224, 0.959) 2px solid;
+}
+
+.circle{
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  border: 2px solid black;
+  border-radius: 50%;
+}
+
+
+
+/* Main page */
+
+.mainContainer{
+  height:600px; 
+  width:75%;
+  margin: 130px auto 0px auto ;
+  background-color: rgb(194, 195, 196);
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.contactLogos{
+  display: grid;
+  grid-template-columns: 1fr repeat(3,40px);
+  grid-column-gap: 20px;
+  padding-top: 8px;
+  margin-right: 40px;
+}
+
+.contactLogo{
+  position:relative;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.githublogo{
+  height: 46px;
+  width: 46px;
+  margin-top: -3px;
+  margin-left: -6px;
+}
+
+.mainPages{
+  height: 90%;
+  width: 95%;
+  margin: 10px auto 0px auto;
+  background-color: rgba(40, 96, 148, 0.445);
+}
+
+.pageHeader{
+  font-size: 50px;
+  padding:20px 0px 18px 30px;
+  margin: 0px;
+}
+
+#introduction{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 10px;
+}
+
+.infoContainer{
+  /* border: 2px solid black; */
+  border-radius: 10px;
+  background-color: rgba(121, 121, 120, 0.486);
+  margin: 20px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 2fr
+}
+
+.infoHeader{
+  padding: 0px;
+  margin:0px;
+}
+
+.infoContainerHeader{
+  grid-column-start: 1;
+  grid-column-end: 3;
+  padding: 0px;
+  margin: 0px;
+  font-size: 35px;
+}
+
+.infoValue{
+  padding: 0px;
+  margin:0px;
+  color: rgba(201, 201, 181, 0.884);
+}
+
+.pageElement{
+  transform:rotateY(180deg);
+}
+
+/* Home page */
+#homePageContent{
+  display: grid;
+  grid-template-columns: 1fr 400px;
+}
+
+#pictureContainer{
+  width:377px;
+  margin-top: -120px;
+  margin-left: auto;
+}
+
+#profilePicture{
+  display: block;
+  width: 100%;
+  height: auto; 
+}
+
+#projectPage{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.projectContainer{
+  border-radius: 10px;
+  background-color: rgba(121, 121, 120, 0.486);
+  height: 425px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.projectInfo{
+  font-size: 20px;
+  color: rgba(201, 201, 181, 0.884);
+  height: 70px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.links{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 20px;
+  height: 35px;
+}
+
+.linkButton{
+  display: grid;
+  grid-template-columns: 35px 1fr;
+  margin: 2px;
+  background-color: rgba(205, 215, 224, 0.74);
+  border:none;
+  width: 100%;
+  height: 30px;
+  font-size: 13px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  box-shadow: 0 0 2px 3px rgb(103, 103, 105);
+}
+
+
+
+.linkButton:hover{
+  background-color:rgba(40, 96, 148, 0.596)
+}
+
+.projectLinkImg{
+  height: 30px;
+  width: 30px;
+  padding-left: 3px;
+}
+
+.linkInfo{
+  font-size: 20px;
+  padding-top: 3px;
+  padding-left: 5px;
+  margin: 0px;
+}
+
+.technologies{
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  grid-template-rows: 25px 15px 15px;
+  grid-gap: 3px;
+  height: 60px;
+}
+
+.techHeader{
+  padding: 0px;
+  margin: 0px;
+  grid-column-start: 1;
+  grid-column-end: 6;
+}
+
+.techElem{
+  text-align: center;
+  background-color: rgba(205, 215, 224, 0.74);
+  border-radius: 1px;
+  font-size: 15px;
+}
+
+.techElem:hover{
+  cursor: default;
   color: white;
+  background-color: rgba(40, 96, 148, 0.747)
 }
 
-.App-link {
-  color: #61dafb;
+.media{
+  width: 1fr;
+  height: 205px;
+  padding-top: 5px;
+  overflow:hidden;
+  display: grid;
+  grid-template-columns: 1px  1fr  1px; 
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.mediaPictureContainer{
+  display: grid;
+  grid-template-columns: repeat(10, 456px);
+  grid-gap: 10px;
+  width: 220px; 
+}
+
+.mediaShadowContainer{
+  /* overflow: hidden;  */
+  /* z-index: 14; */
+  /* position: relative;
+  height: 40px;
+  border:none;
+  height: 205px;
+  width: auto;
+  /* margin-left: wid; */
+  /* box-shadow: 0 0 3px 3px rgb(103, 103, 105) inset;  */
+}
+
+.mediaPicture{
+  position:relative;
+  display: block;
+  width:100%;
+  padding-right: 5px;
+  height: auto;
+  min-height: 205px; 
+  outline: none;
+}
+
+.mediaButtons{
+  position: relative;
+  z-index: +5;
+  height: 40px;
+  border:none;
+  border-radius: 20px;
+  margin-top: 70px;
+  /* background-color: rgba(212, 147, 183, 0.603); */
+  background-color: rgba(225, 232, 238, 0.411);
+}
+
+.mediaButtons:hover{
+  cursor: pointer;
+  background-color: rgba(225, 232, 238, 0.711);
+  /* background-color: rgba(212, 147, 183, 0.9); */
+}
+
+.mediaButtons:focus{
+  outline:0;
+  border: 1px solid rgb(73, 68, 68);
+  padding: 0px;
+}
+
+.left{
+  width: 40px;
+  margin-left: 20px;
+}
+
+.right{
+  width: 40px;
+  margin-left: -60px;
+} 
+
+.arrow{
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;  
+  height: 4px;
+  width: 4px;
+}
+
+.arrowRight {
+  margin-right: 3px;
+  transform: rotate(-45deg);
+}
+
+.arrowLeft {
+  margin-right: -3px;
+  transform: rotate(135deg);
+}
+
+.mediaPosition{
+  position: absolute;
+  margin: 203px 40px 0px 40px;
+  display: grid;
+  grid-template-columns: auto repeat(10,20px);
+}
+
+.mediaPosDot{
+  height: 10px;
+  width: 10px;
+  border: 2px solid black;
+  border-radius: 50%;
+}
+
+.contactContainer{
+  background-color: rgba(121, 121, 120, 0.486);
+  height: 425px;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+
+
+.contactInfo{
+  padding-top: 90px;
+  padding-left: 30px;
+  padding-right: 30px;
+  display: grid;
+  grid-template-rows: repeat(4,60px); 
+}
+
+.contactLink{
+  height: 50px;
+  display: grid;
+  grid-template-columns: 55px 1fr;
+  margin: 2px;
+  background-color: rgba(205, 215, 224, 0.74);
+  border:none;
+  width: 100%;
+  height: 50px;
+  font-size: 13px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  box-shadow: 0 0 2px 3px rgb(103, 103, 105);
+}
+
+.cmail{
+  grid-template-columns: 55px 1fr auto 50px;
+}
+
+.contactEmail{
+  margin-top: 15px;
+  font-size: 20px;
+  padding-right: 10px;
+}
+
+.clipBoard{
+  height: 30px;
+  width: 30px;
+  opacity: 0.5;
+}
+
+.copyClipBoard{
+  padding: 0px;
+  margin: 0px;
+  height: 50px;
+  border: none; 
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.copyClipBoard:hover{
+  cursor: pointer;
+}
+
+
+/* .copyClipBoard::before, */
+.copyClipBoard::after {
+  --scale: 0;
+  --box-size: 35px;
+  --tooltip-color: rgb(0, 0, 0);
+
+  position: absolute;
+  transform: translateX(-40px) translateY(-35px) scale(var(--scale));
+  /* transform: translateX(-50%) translateY(var(--translate-y, 4)) scale(var(--scale)); */
+  transition: 200ms transform;
+  transform-origin: bottom left;
+  /* height: 20px; */
+  width: 80px;
+}
+
+.copyClipBoard:hover::after {
+  --scale: 1;
+}
+
+.copyClipBoard::after {
+  content: 'Copy to clipboard';
+  border: 2px solid transparent;
+  border-color:rgba(40, 96, 148, 0.596);
+  background-color: rgba(40, 96, 148, 0.596);
+  color: white;
+  border-radius: 5px;
+  transform-origin: top bottom;
+}
+
+
+.contactLink:hover{
+  background-color:rgba(40, 96, 148, 0.596);
+}
+
+.contactLinkImg{
+  height: 50px;
+}
+
+.contactlinkInfo{
+  font-size: 30px;
+  padding: 0px;
+  margin: 0px;
+  padding-top: 8px;
+}
+.linkedInCImg{
+  height: 42px;
+  width: 42px;
+  padding: 4px;
+}
+
+.contactForm{
+  width: auto;
+  /* padding-top: 0px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 30px 200px;
+  grid-gap: 30px;
+  padding-right: 30px; */
+}
+
+.googleForm{
+  width: 100%;
+  margin-left: 30px;
+}
+
+@media only screen and (max-width: 1700px) {
+
+  
+  .mediaShadowContainer{
+    /* overflow: hidden; */
+    visibility: hidden;
   }
-  to {
-    transform: rotate(360deg);
+
+  .projectInfo{
+    overflow: scroll;
   }
+  .linkInfo{
+    font-size: 1rem;
+    padding-top: 0px;
+    margin-top: -2px;
+    padding-left: 5px;
+  }
+}
+
+
+@media only screen and (max-width: 1100px) {
+
+  body{
+    /* width: 90%; */
+    max-width: 90%;
+    margin: 0px;
+    padding: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: scroll;
+  }
+
+  #root{
+    /* padding: 0px; */
+    /* margin: 0px; */
+    /* max-width: 300px; */
+  }
+
+  .app{
+    width: 90%;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    /* padding: 0px; */
+    /* margin-bottom: 20px; */
+    /* margin: 0px; */
+    /* overflow-x: hidden; */
+  }
+  
+
+/* Navbar */
+#navBar{
+  height: 50px;
+  margin-top: 30px;
+  width: 1fr;
+}
+
+.buttonContainer{
+  margin-left: auto;
+  margin-right: auto;
+  width: 250px;
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* border: 2px solid black; */
+  border-radius: 3px;
+}
+
+.navButton{
+  background-color: rgba(205, 215, 224, 0.74);
+  border: none;
+  font-size: 20px;
+  font-family: Share Tech;
+  text-align: center;
+  height: 50px;
+}
+
+.navButton:focus{
+  outline:0;
+  margin-top: 1;
+  /* border-bottom: 1px solid black; */
+}
+
+  
+  .mainContainer{
+    height:auto; 
+    width:100%;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    background-color: rgb(194, 195, 196);
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  .contactLogos{
+    display: grid;
+    grid-template-columns: 1fr repeat(3,40px) 1fr;
+    grid-column-gap: 20px;
+    padding-top: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    /* margin-right: 40px; */
+  }
+
+  .contactLogo{
+    position:relative;
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  .githublogo{
+    height: 46px;
+    width: 46px;
+    margin-top: -3px;
+    margin-left: -6px;
+  }
+  
+  .mainPages{
+    height: auto;
+    width: 100%;
+    margin: 10px auto 0px auto;
+    background-color: rgba(40, 96, 148, 0.445);
+  }
+  
+  .pageHeader{
+    font-size: 40px;
+    padding:20px 0px 18px 20px;
+    margin: 0px;
+  }
+  
+  #introduction{
+    width: 100%;
+     height: auto;
+    margin: 0px;
+    padding: 0px;
+    /* display: block; */
+    display: grid;
+    grid-template-rows: 350px 350px;
+    grid-template-columns: 1fr;
+    grid-column-gap: 10px; 
+  }
+  
+  .infoContainer{
+    /* border: 2px solid black; */
+    border-radius: 10px;
+    background-color: rgba(121, 121, 120, 0.486);
+    margin: 0px;
+    margin-bottom: 20px;
+    padding: 20px;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-column-gap: 10px;
+  }
+  
+  .infoHeader{
+    padding: 0px;
+    margin:0px;
+    font-size: 20px;
+  }
+  
+  .infoContainerHeader{
+    /* grid-column-start: 1;
+    grid-column-end: 3; */
+    padding: 0px;
+    margin: 0px;
+    font-size: 25px;
+  }
+  
+  .infoValue{
+    padding: 0px;
+    margin:0px;
+    color: rgba(201, 201, 181, 0.884);
+    font-size: 15px;
+  }
+  
+  .pageElement{
+    transform:rotateY(180deg);
+  }
+  
+  /* Home page */
+  #homePageContent{
+    display: block;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  #pictureContainer{
+    display: none;
+  }
+  
+  #profilePicture{
+    display: none;
+  }
+
+
+  #projectPage{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-gap: 0px;
+    /* width: 1fr; */
+    /* padding-left: 20px; */
+    /* padding-right: 20px; */
+  }
+  
+  .projectContainer{
+    width: 1fr;
+    border-radius: 10px;
+    background-color: rgba(121, 121, 120, 0.486);
+    height: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 40px;
+  }
+  
+  .projectInfo{
+    font-size: 20px;
+    color: rgba(201, 201, 181, 0.884);
+    height: auto;
+    overflow: hidden;
+  }
+  
+  .links{
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 60px;
+    margin-bottom: 10px;
+  }
+  
+  .linkInfo{
+    font-size: 17px;
+    padding-top: 5px;
+    margin: 0px;
+  }
+  
+  .linkButton{
+    margin: 2px;
+    background-color: rgba(240, 255, 255, 0.342);
+    border:none;
+    height: 30px;
+    font-size: 13px;
+    border-left: 2px solid rgb(102, 102, 102);
+    border-right: 2px solid rgb(102, 102, 102);
+  }
+  
+  .technologies{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: 25px 15px 15px;
+    grid-gap: 3px;
+    height: 60px;
+  }
+  
+  .techHeader{
+    padding: 0px;
+    margin: 0px;
+    grid-column-start: 1;
+    grid-column-end: 6;
+  }
+  
+  .techElem{
+    text-align: center;
+    /* background-color: rgb(130, 185, 202);
+    border-radius: 5px;
+    font-size: 15px; */
+  }
+  
+  .media{
+    width: 1fr;
+    height: 195px;
+    padding-top: 5px;
+    overflow:hidden;
+    display: grid;
+    grid-template-columns: 1px 1fr 1px; 
+  }
+  
+  .mediaPictureContainer{
+    display: grid;
+    grid-template-columns: repeat(10, 456px);
+    grid-gap: 10px;
+    width: 220px;
+  }
+  
+  .mediaPicture{
+    position:relative;
+    display: block;
+    width:100%;
+    padding-right: 5px;
+    height: auto;
+
+  }
+  .mediaButtons{
+    position: relative;
+    z-index: +5;
+    height: 40px;
+    border:none;
+    border-radius: 20px;
+    margin-top: 70px;
+    /* margin-left: -600px; */
+    /* background-color: rgba(212, 147, 183, 0.603); */
+    background-color: rgba(225, 232, 238, 0.411);
+  }
+  
+  .mediaButtons:hover{
+    cursor: pointer;
+    background-color: rgba(225, 232, 238, 0.711);
+    /* background-color: rgba(212, 147, 183, 0.9); */
+  }
+  
+  .mediaButtons:focus{
+    outline:0;
+    border: 1px solid rgb(73, 68, 68);
+    padding: 0px;
+  }
+
+  .mediaPosition{
+    width: 100%;
+    /* position: absolute; */
+    margin: 190px auto 0px auto;
+    display: grid;
+    grid-template-columns: repeat(10,20px);
+  }
+  
+  .mediaPosDot{
+    height: 10px;
+    width: 10px;
+    border: 2px solid black;
+    border-radius: 50%;
+  }
+  #mediaPadding{
+    display:none;
+  }
+
+  .contactLink{
+    /* height: 50px; */
+    display: grid;
+    grid-template-columns: 55px 1fr;
+    margin: 2px;
+    background-color: rgba(205, 215, 224, 0.74);
+    border:none;
+    width: 100%;
+    height: 50px;
+    font-size: 13px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+  }
+
+  .contactlinkInfo{
+    font-size: 15px;
+    padding-top: 15px;
+  }
+
+  .cmail{
+    grid-template-columns: 55px 50px 1fr;
+    font-size: 50px;
+  }
+  
+
+  .clipBoard{
+    visibility: hidden;
+  }
+  
+  .copyClipBoard{
+    visibility: hidden;
+  }
+
+  .contactEmail{
+    overflow-wrap: anywhere;
+    font-size: 15px;
+  }
+  
+  .contactContainer{
+    background-color: rgba(121, 121, 120, 0.486);
+    height: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 800px;
+  }
+  
+  .contactInfo{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    /* padding-top: 20px; */
+    /* padding-bottom: 10px; */
+  }
+  
+  .contactForm{
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    display: grid; 
+    grid-template-columns: 100%;
+  overflow: hidden;
+    /* grid-template-rows: 30px 200px; */
+    /* grid-gap: 30px; */
+    /* padding-right: 30px; */
+  }
+
+  .googleForm{
+    height: 800px;
+    width: 130%;
+    margin-left: -12px;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    
+  }
+
 }
