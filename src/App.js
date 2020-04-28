@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Navbar from './components/navbar/navbar'
 import MainPage from './components/mainContent/mainPage'
-import {Background} from './components/mainContent/background/background'
+// import {Background} from './components/mainContent/background/background'
 
 
 export class App extends Component {
@@ -20,7 +20,7 @@ export class App extends Component {
   render() {
     return (
       <div className="app">
-        <Background/>
+        {/* <Background/> */}
         <Navbar changePage={this.changePage.bind(this)}/>
         <MainPage currentPage={this.state.currentPage}/>
       </div>

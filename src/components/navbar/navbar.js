@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Spring } from 'react-spring/renderprops';
 
 export class Navbar extends Component {
     constructor() {

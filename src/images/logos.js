@@ -1,8 +1,8 @@
 import GitLogo from './github.png';
 import CodeSandLogo from './codesandbox.png';
 import LinkedInLogo from './linkedIn.png';
-import GmailLogo from './gmail.svg';
-import ClipBoard from './clipboard.svg'
+import GmailLogo from './gmail.png';
+import ClipBoard from './clipboard.png'
 
 let logos={
     github:GitLogo,

@@ -16,7 +16,6 @@ export class Media extends Component {
     }
 
     componentDidMount(){
-        console.log(Img[this.props.projectNum].length);
         let mediaPositions=[]
         Img[this.props.projectNum].forEach((pos,index)=>{
             mediaPositions.push({id:index});
@@ -33,9 +32,6 @@ export class Media extends Component {
 
     componentWillUnmount() {
         clearInterval(this.interval);
-
-
-
     }
 
     changePicture(type){
@@ -57,9 +53,10 @@ export class Media extends Component {
 
     render() {
         return (
-            <div className='media'>
+            <div >
+                <div className='media'>
                 <button style={{visibility:this.state.currentPosition===0?'hidden':'visible'}} onClick={this.changePicture.bind(this,'-')} className='mediaButtons left'><p className='arrow arrowLeft'></p></button>
-                
+                <button style={{visibility:this.state.currentPosition===this.state.maxPosition?'hidden':'visible'}} onClick={this.changePicture.bind(this,'+')} className='mediaButtons right'><p className='arrow arrowRight'></p></button> 
                 <Spring
                         from={{
                             marginLeft:-(this.state.lastPosition*466)
@@ -75,23 +72,19 @@ export class Media extends Component {
                                 <div  className='mediaPictureContainer'>
                                     {Img[this.props.projectNum].map((elem,index)=>
                                         
-
-                                            <img key={index} className='mediaPicture' src={elem}/>
-                                        
-                                       
-                                        
-                                        // {if(index===this.state.active){
-                                        //     return <img className='mediaPicture' src={elem}/>
-                                        // }}
+                                            <img alt='description' key={index} className='mediaPicture' src={elem}/>
                                     )}
                                 </div>                                
                             </div>
 
                         )}
                 </Spring>  
-                {/* <div className='mediaShadowContainer'> </div> */}
-                <button style={{visibility:this.state.currentPosition===this.state.maxPosition?'hidden':'visible'}} onClick={this.changePicture.bind(this,'+')} className='mediaButtons right'><p className='arrow arrowRight'></p></button>   
-                <MediaPosition positions={this.state.mediaPositions} currentPosition={this.state.currentPosition}/>
+  
+                </div>
+                {/* <div className='over'> */}
+                    <MediaPosition positions={this.state.mediaPositions} currentPosition={this.state.currentPosition}/>
+                {/* </div> */}
+                
             </div>
         )
     }
