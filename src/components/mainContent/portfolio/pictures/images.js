@@ -17,7 +17,10 @@ import Img14 from './Pic14.JPG'
 // import Img17 from './Pic17.JPG'
 import Img24 from './Pic24.JPG'
 import Img25 from './Pic25.JPG'
-
+import Img26 from './Pic26.JPG'
+import Img27 from './Pic27.JPG'
+import Img28 from './Pic28.JPG'
+import Img29 from './Pic29.JPG'
 
 let divCal=[
     Img2,
@@ -31,12 +34,11 @@ let divCal=[
     // Img9
 ]
 
-let dataPush=[
-    Img10,
-    Img11,
-    Img12,
-    Img13,
-    Img14,
+let neural=[
+    Img26,
+    Img27,
+    Img28,
+    Img29,
 ]
 
 let reheboam=[
@@ -47,7 +49,7 @@ let reheboam=[
 
 export default[
     divCal,
-    dataPush,
+    neural,
     reheboam
 ]
 

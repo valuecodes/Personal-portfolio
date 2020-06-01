@@ -11,7 +11,7 @@ export class Portfolio extends Component {
         this.state = {
             selected:true,
             divcaltech:['Javascript','React','Node.js','React Spring','chart.js 2','Mysql','Fetch API'],
-            dataTech:['Javascript','React','Node.js','Mysql','Fetch API'],
+            neuralBirds:['Javascript','React','tensorflow.js','chart.js 2'],
             reheboam:['Javascript','React','React'],
             active:1,
         }
@@ -65,19 +65,21 @@ export class Portfolio extends Component {
                             <Media projectNum={0}/>
                         </div>
                         <div className='projectContainer'>
-                            <h2 className='infoContainerHeader'>Data Pusher</h2>
-                            <h1 className='projectInfo'>Gather financial data from different websites and push it to the local Mysql server. Data will then be used in the Dividend Calendar website.</h1>
+                            <h2 className='infoContainerHeader'>Neural Birds</h2>
+                            <h1 className='projectInfo'>Neuroevolution simulator based on the popular flappy bird mobile game.</h1>
                             <div className='links'>
-                                {/* <h2 className='linkInfo'>Test in CodeSandbox</h2>
-                                <button className='linkButton'>Here</button> */}
-                                <a rel="noopener noreferrer" href="https://github.com/valuecodes/Data-pusher" target="_blank" className='linkButton'>
+                                <a rel="noopener noreferrer" className='projectLink linkButton' href="https://www.neuralbirds.com/" target="_blank" >
+                                    <img alt='description' className='projectLinkImg' src={CodeSandLogo}/>
+                                    <h2 className='linkInfo'>View Live Version</h2>
+                                </a>
+                                <a rel="noopener noreferrer" href="https://github.com/valuecodes/Neural-Birds" target="_blank" className='linkButton'>
                                 <img alt='description' className='projectLinkImg' src={GitLogo}/>
                                 <h2 className='linkInfo'>Code in Github</h2>
                                 </a>                           
                             </div>
                             <div className='technologies'>
                                 <h2 className='techHeader'>Technologies used</h2>
-                                {this.state.dataTech.map((tech,index) =>
+                                {this.state.neuralBirds.map((tech,index) =>
                                     <Technologies key={index} tech={tech}/>
                                 )}                            
                             </div>

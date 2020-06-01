@@ -38,7 +38,7 @@ export class Home extends Component {
                                 <h2 className='infoHeader'>Name</h2>
                                 <h1 className='infoValue'>Juha Kangas</h1>
                                 <h2 className='infoHeader'>Age</h2>
-                                <h1 className='infoValue'>24</h1>
+                                <h1 className='infoValue'>25</h1>
                                 <h2 className='infoHeader'>Education</h2>
                                 <h1 className='infoValue'>Bachelor of Business Administration</h1>
                                 <h2 className='infoHeader'>Job experience</h2>
